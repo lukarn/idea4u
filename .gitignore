@@ -25,3 +25,5 @@
 hs_err_pid*
 
 !/pom.xml
+/.idea/
+/idea4u.iml
