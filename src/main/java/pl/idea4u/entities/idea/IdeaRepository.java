@@ -6,36 +6,24 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface IdeaRepository extends JpaRepository<Idea, Long>{
+public interface IdeaRepository extends JpaRepository<Idea, Integer>{
 
-//    @Query(value = "SELECT *" +
-//            " FROM SYS.IDEA" +
-//            " WHERE IDEA_AVAL='Y'" +
-//            " ORDER BY IDEA_PK DESC LIMIT 10",
-//            nativeQuery = true)
-//    List<Idea> findLastTenIdeas();
+    @Query(value = "SELECT * FROM `isch`.`idea`" +
+            " WHERE `available` = 'Y'" +
+            " ORDER BY `id` DESC" +
+            " LIMIT 10",
+            nativeQuery = true)
+    List<Idea> findLastTenIdeas();
+
+    @Query(value = "SELECT * FROM `isch`.`idea`" +
+            " WHERE `available` = 'Y'" +
+            " ORDER BY `rank` DESC, `id` DESC" +
+            " LIMIT 10",
+            nativeQuery = true)
+    List<Idea> findTopTenIdeas();
 
 
 
-
-
-//    @Query(value = "SELECT * FROM SYS.IDEA WHERE IDEA_AVAL='Y' ORDER BY IDEA_PK DESC LIMIT 10",
-//            nativeQuery = true)
-//    List<Idea> findLastTenAddedIdeas();
-//
-//    @Query(value = "START TRANSACTION;\n" +
-//            "INSERT INTO SYS.IDEA\n" +
-//            "(IDEA_DESC,\n" +
-//            "IDEA_CATEGORY)\n" +
-//            "VALUES\n" +
-//            "( :description ,\n" +
-//            " :category);" +
-//            "SELECT LAST_INSERT_ID();\n" +
-//            "COMMIT;",
-//            nativeQuery = true)
-//    int addNewIdea(
-//            @Param("description") String description,
-//            @Param("category") int category);
 
 
 
