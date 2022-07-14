@@ -48,9 +48,9 @@ public class IdeaService {
 
     @GetMapping("/idea/count")
     public ResponseEntity countIdeas() throws JsonProcessingException {
-        List<Idea> ideas = ideaRepository.findTopTenIdeas();
+        int availableIdeas = ideaRepository.countIdeas();
 
-        return ResponseEntity.ok(objectMapper.writeValueAsString(ideas));
+        return ResponseEntity.ok(objectMapper.writeValueAsString(availableIdeas));
     }
 
     /////////////// POST //////////////////////

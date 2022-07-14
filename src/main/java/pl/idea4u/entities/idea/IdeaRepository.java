@@ -22,6 +22,11 @@ public interface IdeaRepository extends JpaRepository<Idea, Integer>{
             nativeQuery = true)
     List<Idea> findTopTenIdeas();
 
+    @Query(value = "SELECT COUNT(*) FROM `isch`.`idea`" +
+            " WHERE `available` = 'Y'",
+            nativeQuery = true)
+    int countIdeas();
+
 
 
 

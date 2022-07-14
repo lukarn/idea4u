@@ -18,8 +18,8 @@ public class Idea {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(insertable = false)
-    private String available;
+//    @Column(insertable = false)
+//    private String available;
 
     //insertable = false, updatable = false
     //@Column(columnDefinition = "integer default 1") <- ni dziala!!!
