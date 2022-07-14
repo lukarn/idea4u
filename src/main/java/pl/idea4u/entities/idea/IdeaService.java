@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pl.idea4u.common.IdeaNotFoundException;
+import pl.idea4u.common.exceptions.IdeaNotFoundException;
 
 import java.util.List;
 

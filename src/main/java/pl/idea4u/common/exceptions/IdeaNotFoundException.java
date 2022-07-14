@@ -1,4 +1,4 @@
-package pl.idea4u.common;
+package pl.idea4u.common.exceptions;
 
 public class IdeaNotFoundException extends RuntimeException {
     public IdeaNotFoundException(Integer id) {
